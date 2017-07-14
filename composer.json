@@ -1,0 +1,28 @@
+{
+    "name": "dzarezenko/etherscan-api",
+    "description": "PHP wrapper for the Etherscan API.",
+    "type": "library",
+    "keywords": ["etherscan", "api"],
+    "homepage": "https://github.com/dzarezenko/etherscan-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmytro Zarezenko",
+            "email": "dmytro.zarezenko@gmail.com",
+            "homepage": "https://github.com/dzarezenko",
+            "role": "Development"
+        }
+    ],
+    "support": {
+        "email": "dmytro.zarezenko@gmail.com"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "etherscan\\api\\": "src/"
+        }
+    }
+}
