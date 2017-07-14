@@ -2,7 +2,6 @@
 
 namespace etherscan\api;
 
-use etherscan\api\EtherscanAPIConf;
 use etherscan\api\tools\Request;
 
 /**
@@ -18,7 +17,7 @@ use etherscan\api\tools\Request;
 class Etherscan {
 
     /**
-     * Etherscan API key token
+     * Etherscan API key token.
      *
      * @var string
      */
@@ -82,7 +81,7 @@ class Etherscan {
 
     /**
      * Get a list of 'Normal' Transactions By Address.
-     * (Returns up to a maximum of the last 10000 transactions only)
+     * (Returns up to a maximum of the last 10000 transactions only).
      *
      * @param string $address Ether address.
      * @param int $startBlock Starting blockNo to retrieve results
@@ -116,7 +115,7 @@ class Etherscan {
 
     /**
      * Get a list of 'Internal' Transactions by Address
-     * (Returns up to a maximum of the last 10000 transactions only)
+     * (Returns up to a maximum of the last 10000 transactions only).
      *
      * @param string $address Ether address.
      * @param int $startBlock Starting blockNo to retrieve results
@@ -200,7 +199,7 @@ class Etherscan {
 
     /**
      * Get Contract ABI for Verified Contract Source Codes.
-     * (Newly verified Contracts are synched to the API servers within 5 minutes or less)
+     * (Newly verified Contracts are synched to the API servers within 5 minutes or less).
      *
      * @param string $address Ether address.
      *
@@ -216,7 +215,7 @@ class Etherscan {
 
     /**
      * Get Contract ABI for Verified Contract Source Codes.
-     * (Newly verified Contracts are synched to the API servers within 5 minutes or less)
+     * (Newly verified Contracts are synched to the API servers within 5 minutes or less).
      *
      * @param string $address Ether address.
      *
@@ -289,7 +288,7 @@ class Etherscan {
 
     /**
      * Get Token TotalSupply by TokenName (Supported TokenNames: DGD, MKR,
-     * FirstBlood, HackerGold, ICONOMI, Pluton, REP, SNGLS)
+     * FirstBlood, HackerGold, ICONOMI, Pluton, REP, SNGLS).
      *
      * or
      *
@@ -316,7 +315,7 @@ class Etherscan {
 
     /**
      * Get Token Account Balance by known TokenName (Supported TokenNames: DGD,
-     * MKR, FirstBlood, HackerGold, ICONOMI, Pluton, REP, SNGLS)
+     * MKR, FirstBlood, HackerGold, ICONOMI, Pluton, REP, SNGLS).
      *
      * or
      *
