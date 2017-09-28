@@ -22,14 +22,22 @@ class Request {
     private $apiKeyToken = "";
 
     /**
+     * Testnet name or Mainnet if null.
+     *
+     * @var string
+     */
+    private $net = null;
+
+    /**
      * cURL handle.
      *
      * @var resource
      */
     private static $ch = null;
 
-    public function __construct($apiKeyToken) {
+    public function __construct($apiKeyToken, $net = null) {
         $this->apiKeyToken = $apiKeyToken;
+        $this->net = $net;
     }
 
     /**
@@ -59,7 +67,7 @@ class Request {
                 'Mozilla/4.0 (compatible; Etherscan PHP API; ' . php_uname('a') . '; PHP/' . phpversion() . ')'
             );
         }
-        curl_setopt(self::$ch, CURLOPT_URL, \etherscan\api\EtherscanAPIConf::API_URL);
+        curl_setopt(self::$ch, CURLOPT_URL, \etherscan\api\EtherscanAPIConf::getAPIUrl($this->net));
         curl_setopt(self::$ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt(self::$ch, CURLOPT_SSL_VERIFYPEER, false);
 

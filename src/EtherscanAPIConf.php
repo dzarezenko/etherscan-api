@@ -16,6 +16,25 @@ class EtherscanAPIConf {
 
     const API_URL = "https://api.etherscan.io/api";
 
+    const TESTNET_ROPSTEN = "ropsten";
+    const TESTNET_KOVAN = "kovan";
+    const TESTNET_RINKEBY = "rinkeby";
+
+    /**
+     * Returns API basic URL.
+     *
+     * @param string $net Mainnet - if null, or testnet if provided.
+     *
+     * @return string
+     */
+    public static function getAPIUrl($net = null) {
+        if (is_null($net)) {
+            return self::API_URL;
+        }
+
+        return "https://{$net}.etherscan.io/api";
+    }
+
     const TAG_LATEST = "latest";
 
     const BLOCK_TYPE_BLOCKS = "blocks";

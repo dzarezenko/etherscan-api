@@ -30,13 +30,19 @@ class Etherscan {
      */
     private $request = null;
 
-    public function __construct($apiKeyToken = null) {
+    /**
+     * Instantiate Etherscan API object.
+     *
+     * @param string $apiKeyToken API key token.
+     * @param string $net Testnet name or mainnet by default.
+     */
+    public function __construct($apiKeyToken = null, $net = null) {
         if (is_null($apiKeyToken)) {
             return;
         }
 
         $this->apiKeyToken = $apiKeyToken;
-        $this->request = new Request($apiKeyToken);
+        $this->request = new Request($apiKeyToken, $net);
     }
 
     // === Account APIs ========================================================
