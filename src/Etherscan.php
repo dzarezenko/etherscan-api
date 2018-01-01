@@ -335,7 +335,7 @@ class Etherscan {
      */
     public function tokenBalance($tokenIdentifier, $address, $tag = EtherscanAPIConf::TAG_LATEST) {
         $params = [
-            'module' => "stats",
+            'module' => "account",
             'action' => "tokenbalance",
             'address' => $address,
             'tag' => $tag
