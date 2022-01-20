@@ -23,15 +23,23 @@ class EtherscanAPIConf {
     /**
      * Returns API basic URL.
      *
-     * @param string $net Mainnet - if null, or testnet if provided.
+     * @param string $net if null then return Mainnet. Otherwise return url / testnet if provided.
      *
      * @return string
      */
     public static function getAPIUrl($net = null) {
+        
+        // If $net is null return default mainnet url
         if (is_null($net)) {
             return self::API_URL;
         }
-
+        
+        // If $net is valid URL then return
+        if (filter_var($net, FILTER_VALIDATE_URL)) {
+            return $net;
+        }
+        
+        // Otherwise treat $net as testnet name
         return "https://{$net}.etherscan.io/api";
     }
 
